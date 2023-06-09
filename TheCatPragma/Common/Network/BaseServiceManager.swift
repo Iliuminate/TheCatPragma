@@ -13,15 +13,6 @@ struct ObjectResponse<T: Decodable>: Decodable {
 
 struct ArrayResponse<T: Decodable>: Decodable {
     let data: [T]?
-    
-//    enum CodingKeys: String, CodingKey {
-//        case data
-//    }
-//    
-//    init(from decoder: Decoder) throws {
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//        self.data = try? container.decode([T].self, forKey: .data)
-//    }
 }
 
 struct ArrayDetailsResponse<T: Decodable, D: Decodable>: Decodable {

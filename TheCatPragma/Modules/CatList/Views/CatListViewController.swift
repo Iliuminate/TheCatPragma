@@ -25,6 +25,10 @@ final class CatListViewController: UIViewController {
         presenter.getCats()
     }
     
+    func setUpView() {
+        navigationController?.title = "Catbreeds"
+    }
+    
     func setUpCollectionView() {
         mainCollecionView.register(UINib(nibName: "CatCell", bundle: nil), forCellWithReuseIdentifier: "CatCell")
         mainCollecionView.dataSource = self
@@ -64,6 +68,9 @@ extension CatListViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - UICollectionViewDelegate  -
 extension CatListViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.showDetail(index: indexPath)
+    }
 }
 
 // MARK: - UICollectionViewDelegate  -

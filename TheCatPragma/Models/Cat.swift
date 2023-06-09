@@ -13,6 +13,7 @@ struct Cat: Decodable {
     let affectionLevel: Int?
     let intelligence: Int?
     let imageUrl: String?
+    let description: String?
     
     enum CodingKeys: String, CodingKey {
         case breedName = "name"
@@ -20,5 +21,6 @@ struct Cat: Decodable {
         case affectionLevel = "affection_level"
         case intelligence
         case imageUrl = "reference_image_id"
+        case description
     }
 }

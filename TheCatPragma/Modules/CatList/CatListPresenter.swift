@@ -42,7 +42,7 @@ extension CatListPresenter: CatListPresenterInterface {
                 self?.cats = cats
                 self?.view.reloadData()
             case .error(let text):
-                print("CEDA: -error: \(text)")
+                print("CEDA: -error: \(String(describing: text))")
             }
         }
     }
@@ -55,5 +55,12 @@ extension CatListPresenter: CatListPresenterInterface {
             image: cat.imageUrl ?? "",
             intelligence: cat.intelligence ?? 0,
             origin: cat.origin ?? "")
+    }
+    
+    func showDetail(index: IndexPath) {
+        // FIXME: - Controlar que no pueda elegir un indice fuera de rango
+        let cat = cats[index.row]
+        print("CEDA: Index-detail: \(index)")
+        wireframe.showDetail(cat: cat)
     }
 }

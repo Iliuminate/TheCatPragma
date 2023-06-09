@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navigation = CustomNavigationController()
         navigation.setRootWireframe(CatListWireframe())
-        navigation.setNavigationBarHidden(true, animated: false)
+        navigation.setNavigationBarHidden(false, animated: false)
         
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()

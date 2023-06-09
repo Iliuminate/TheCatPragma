@@ -28,4 +28,8 @@ final class CatListWireframe: BaseWireframe<CatListViewController> {
 // MARK: - Extensions -
 
 extension CatListWireframe: CatListWireframeInterface {
+    
+    func showDetail(cat: Cat) {
+        navigationController?.pushWireframe(CatDetailWireframe(cat))
+    }
 }

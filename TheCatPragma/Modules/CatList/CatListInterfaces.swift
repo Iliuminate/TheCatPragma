@@ -16,6 +16,7 @@ enum CatsResult {
 }
 
 protocol CatListWireframeInterface: WireframeInterface {
+    func showDetail(cat: Cat)
 }
 
 protocol CatListViewInterface: ViewInterface {
@@ -26,6 +27,7 @@ protocol CatListPresenterInterface: PresenterInterface {
     var cats: [Cat] { get set }
     func getCats()
     func getCatModel(index: IndexPath) -> CatCellModel
+    func showDetail(index: IndexPath)
 }
 
 protocol CatListInteractorInterface: InteractorInterface {
